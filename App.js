@@ -13,7 +13,7 @@ export default function App() {
           uri: 'https://uploads.metropoles.com/wp-content/uploads/2019/11/16113237/caneta-azul.jpg',
         }}
       />
-     <Separator />
+    
 		  <view>
 				  <text style={styles.bloco}>Nome: </text>
 				  <TextInput style={styles.input}/>
@@ -42,9 +42,4 @@ const styles = StyleSheet.create({
 		width: 120,
 		height: 120,
 	},
-	 separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-	 },
 });
