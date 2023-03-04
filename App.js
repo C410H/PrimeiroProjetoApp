@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Image} from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 
 
 export default function App() {
-  return (
+	const[nome,setNome] = useState("Marcelo");
+	
+	function lerNome(){
+		setNome("Ana");
+	}
+	
+  return ( 
+	  
     <View style={styles.container}>
       	<Text style={styles.titulo}>Martalo</Text>
 		  <Image
@@ -16,7 +23,12 @@ export default function App() {
     
 		  <view>
 				  <text style={styles.bloco}>Nome: </text>
-				  <TextInput style={styles.input}/>
+				 	 <TextInput style={styles.input}/>
+						  <TouchableOpacity style={styles.botao} onPress={lerNome}>
+							<text style={styles.txtbotao}>Enviar</text>
+						  </TouchableOpacity>
+			  
+			  	<text style={styles.titulo}>Nome: {nome}</text>
 		  </view>
 		  
     </View>
@@ -24,7 +36,16 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+	botao:{
+	backgroundColor: '#000',
+	alignItems: 'center',
+	marginTop: 20,
+	},
+	txtbotao:{
+	color:"#fff",
+	marginTop: 5,
+	},
+	container: {
     flex: 1,
     backgroundColor: '#732',
     alignItems: 'center',
