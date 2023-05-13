@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity, Button} from 'react-native';
 import React, {useState, component} from 'react';
 
 
@@ -75,21 +75,16 @@ export default function App() {
 		  </view>
 		  
 		  <view style={styles.blocoFlex}>
-			    <TouchableOpacity style={styles.botao1} onPress={somar}>
-							<text style={styles.txtbotao}>Somar</text>
-				</TouchableOpacity>
+			    <Button style={styles.botao1} onPress={somar}/>
+
 			  
-			  <TouchableOpacity style={styles.botao1} onPress={subtrair}>
-							<text style={styles.txtbotao}>Subtrair</text>
-				</TouchableOpacity>
+			  <button style={styles.botao1} onPress={() => subtrair} title="Left button"/>
 			  
-			  <TouchableOpacity style={styles.botao3} onPress={dividir}>
-							<text style={styles.txtbotao}>Dividir</text>
-				</TouchableOpacity>
+			  <button style={styles.botao3} onPress={() => dividir}/>
+							
 			  
-			  <TouchableOpacity style={styles.botao4} onPress={multiplicar}>
-							<text style={styles.txtbotao}>Multiplicar</text>
-				</TouchableOpacity>
+			  <button style={styles.botao4} onPress={() => multiplicar}/>
+							
 		  </view>
 		  
 		   <view style={styles.bloco}>
@@ -134,23 +129,27 @@ const styles = StyleSheet.create({
 		alignItems: 'baseline',
 		backgroundColor: '#000',
 		marginTop: 20,
-		justifyContent: 'space-evenly',
 		flexDirection: 'row',
+    	justifyContent: 'space-between',
 	},
 	botao1:{
 		width: 75,
 		height: 30,
+		marginVertical: 8,
 	},
 	botao2:{
 		width: 75,
 		height: 30,
+		marginVertical: 8,
 	},
 	botao3:{
 		width: 75,
 		height: 30,
+		marginVertical: 8,
 	},
 	botao4:{
 		width: 75,
 		height: 30,
+		marginVertical: 8,
 	}
 });
